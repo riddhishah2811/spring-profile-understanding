@@ -7,3 +7,7 @@
 #### Maven Provide the Build profile. when we change the profile we need to do the code build.
 #### That means if any environment[qa/dev/prod] changes, build required.
 #### Which violates the <b>12-factor principle</b> which is suggesting WORA[Write Once Read Many] that means build the code once and deploy or run the code in as many as environment we want without building it.
+#### No matter whoever the profile we are activating, but all the classes dependencies, properties files belonging to all the environment will be there in the build. i.e JAR/WAR
+#### That is the reason there is a runtime profile.
+
+

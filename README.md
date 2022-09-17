@@ -10,4 +10,5 @@
 #### No matter whoever the profile we are activating, but all the classes dependencies, properties files belonging to all the environment will be there in the build. i.e JAR/WAR
 #### That is the reason there is a runtime profile.
 
+![Image1](https://user-images.githubusercontent.com/59967480/190868205-02544dd1-028f-4798-b425-3b0e36778a1b.png)
 

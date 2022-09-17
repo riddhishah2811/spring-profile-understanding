@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>spring-profiles-understanding</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  		<version>4.3.18.RELEASE</version>
+  	</dependency>
+  </dependencies>
+  
+  <profiles>
+  	<profile>
+  		<id>dev</id>
+  		<properties>
+  			<spring.app.profile>dev</spring.app.profile>
+  		</properties>
+  		<activation>
+  			<activeByDefault>true</activeByDefault>
+  		</activation>
+  	</profile>
+  	<profile>
+  		<id>qa</id>
+  		<properties>
+  			<spring.app.profile>qa</spring.app.profile>
+  		</properties>
+  	</profile>
+  	
+  </profiles>
+  <build>
+  	<plugins>
+  	<!--  Maven Plugin which is take care of filtering the maven profiling-->
+  	<plugin>
+  		<groupId>org.apache.maven.plugins</groupId>
+  		<artifactId>maven-resources-plugin</artifactId>
+  		<version>2.4</version>
+  		<configuration>
+  			<encoding>UTF-8</encoding>
+  		</configuration>
+  	</plugin>
+  	</plugins>
+  	<!-- We must tell the plugin where the resources are located.  -->
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<filtering>true</filtering>
+  		</resource>
+  	</resources>
+  </build>
+</project>
